@@ -1,0 +1,10 @@
+{
+  "name": "@sequoia-deck/TomatoToDo-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@sequoia-deck/TomatoToDo"
+    ]
+  }
+}

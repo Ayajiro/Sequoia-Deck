@@ -2,5 +2,24 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./TaskTimer-e2e"
+    },
+    {
+      "path": "./TaskTimer"
+    },
+    {
+      "path": "./apps/TaskTimer-e2e"
+    },
+    {
+      "path": "./apps/TaskTimer"
+    },
+    {
+      "path": "./apps/TomatoToDo-e2e"
+    },
+    {
+      "path": "./apps/TomatoToDo"
+    }
+  ]
 }
