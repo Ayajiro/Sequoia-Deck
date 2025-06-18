@@ -1,0 +1,42 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+// Project-specific Cursor Rules for Sequoia-Deck
+// 本檔案針對本專案的實際開發流程與結構，提供 Cursor 操作指引
+
+# Monorepo 結構
+- 本專案採用 Nx 管理 monorepo，所有應用程式與測試專案皆位於 apps/ 目錄下。
+- 每個 apps/ 下的資料夾為一個獨立專案（如 TaskTimer、TomatoToDo），其 e2e 測試專案以 -e2e 結尾。
+- 共用設定（如 tsconfig.base.json、eslint.config.mjs、tailwind.config.js）位於專案根目錄或各 app 目錄。
+- packages/ 目錄預留給共用函式庫，目前為空。
+
+# 套件管理
+- 使用 pnpm 作為套件管理工具，所有依賴統一管理於根目錄的 pnpm-workspace.yaml。
+- 安裝新套件時，建議於根目錄執行 pnpm add，並指定 -F <project> 以安裝至特定 app。
+
+# Next.js 專案規範
+- 前端專案（如 TaskTimer、TomatoToDo）採用 Next.js，主要程式碼位於 src/app/。
+- src/app/ 下包含 global.css、layout.tsx、page.tsx 及 api/ 目錄（API route）。
+- 靜態資源放於 public/ 目錄。
+- next.config.js、postcss.config.js、tailwind.config.js 於各 app 目錄下。
+
+# 測試規範
+- e2e 測試專案（如 TaskTimer-e2e、TomatoToDo-e2e）使用 Playwright，測試檔案位於 src/。
+- playwright.config.ts 於各 e2e 專案根目錄。
+- 建議測試命名規則為 *.spec.ts。
+
+# 程式碼品質
+- 各專案皆有獨立的 eslint.config.mjs，亦可繼承根目錄設定。
+- 建議於提交前執行 pnpm lint 或 nx lint <project>。
+- 格式化工具建議使用 Prettier，設定於 .prettierrc。
+
+# Nx 操作建議
+- 產生新專案、lib、component 時，優先使用 Nx Console 或 nx generate 指令。
+- 查詢專案依賴、task 流程，建議使用 nx graph。
+- 執行 build、test、lint、e2e 等任務，建議使用 nx run <project>:<target>。
+
+# 其他
+- 所有專案相關說明請詳見 README.md。
+- 若有共用型函式庫需求，請於 packages/ 目錄下建立對應 lib。
