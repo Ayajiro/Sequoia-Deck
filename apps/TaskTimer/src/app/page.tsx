@@ -30,7 +30,7 @@ export default function Index() {
         <input
           ref={inputRef}
           type="text"
-          placeholder="Do Somthing..."
+          placeholder="Do Something..."
           className="flex-1 px-6 py-4 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-black text-lg bg-white placeholder-gray-400"
           onKeyDown={e => { if (e.key === 'Enter') handleGo(); }}
         />
