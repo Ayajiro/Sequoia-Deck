@@ -4,12 +4,6 @@
   "files": [],
   "references": [
     {
-      "path": "./TaskTimer-e2e"
-    },
-    {
-      "path": "./TaskTimer"
-    },
-    {
       "path": "./apps/TaskTimer-e2e"
     },
     {
