@@ -13,8 +13,18 @@ export default function Index() {
     }
   };
 
+  const handleHistory = () => {
+    router.push('/history');
+  };
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-white text-black">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-white text-black relative">
+      <button
+        className="absolute top-8 left-8 px-6 py-2 bg-gray-200 text-black rounded-md font-semibold text-base hover:bg-gray-300 transition-colors duration-150"
+        onClick={handleHistory}
+      >
+        記錄
+      </button>
       <h1 className="text-[100px] font-bold text-center select-none">TaskTimer</h1>
       <div className="flex mt-12 w-full max-w-md">
         <input
