@@ -34,6 +34,9 @@ export default function HistoryPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white text-black">
+      <div className="absolute top-6 left-8 z-10 flex items-center gap-2">
+        <span className="text-2xl font-bold tracking-wide select-none">{t('appTitle')}</span>
+      </div>
       <div className="flex flex-col items-center w-full max-w-3xl relative">
         <div className="absolute top-0 right-0 flex gap-2">
           <button
@@ -49,6 +52,13 @@ export default function HistoryPage() {
               ${i18n.language === 'en' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
           >
             English
+          </button>
+          <button
+            onClick={() => i18n.changeLanguage('ja')}
+            className={`px-4 py-2 rounded-full border transition-colors duration-150 font-semibold text-sm
+              ${i18n.language === 'ja' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
+          >
+            日本語
           </button>
         </div>
         <button
@@ -66,9 +76,9 @@ export default function HistoryPage() {
             <table className="min-w-full relative" >
               <thead className="bg-gray-100 sticky top-0 z-10">
                 <tr>
-                  <th className="px-6 py-3 text-left text-base font-semibold">Time</th>
-                  <th className="px-6 py-3 text-left text-base font-semibold">Task</th>
-                  <th className="px-6 py-3 text-left text-base font-semibold">花費時間</th>
+                  <th className="px-6 py-3 text-left text-base font-semibold">{t('tableTime')}</th>
+                  <th className="px-6 py-3 text-left text-base font-semibold">{t('tableTask')}</th>
+                  <th className="px-6 py-3 text-left text-base font-semibold">{t('tableDuration')}</th>
                 </tr>
               </thead>
               <tbody>

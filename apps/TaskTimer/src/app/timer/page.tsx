@@ -60,6 +60,9 @@ export default function TimerPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
+      <div className="absolute top-6 left-8 z-10 flex items-center gap-2">
+        <span className="text-2xl font-bold tracking-wide select-none text-white">{t('appTitle')}</span>
+      </div>
       {isReady ? (
         <>
           <div className="w-full flex justify-between mt-12 px-8">
@@ -78,6 +81,13 @@ export default function TimerPage() {
                   ${i18n.language === 'en' ? 'bg-white text-black border-white' : 'bg-black text-white border-gray-300 hover:bg-gray-800'}`}
               >
                 English
+              </button>
+              <button
+                onClick={() => i18n.changeLanguage('ja')}
+                className={`px-4 py-2 rounded-full border transition-colors duration-150 font-semibold text-sm
+                  ${i18n.language === 'ja' ? 'bg-white text-black border-white' : 'bg-black text-white border-gray-300 hover:bg-gray-800'}`}
+              >
+                日本語
               </button>
             </div>
           </div>

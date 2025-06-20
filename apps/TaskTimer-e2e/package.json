@@ -1,10 +1,10 @@
 {
-  "name": "@sequoia-deck/TaskTimer-e2e",
+  "name": "@sequoia-deck/Ippo-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
     "implicitDependencies": [
-      "@sequoia-deck/TaskTimer"
+      "@sequoia-deck/Ippo"
     ]
   }
 }

@@ -32,8 +32,8 @@
     "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo"
   },
   "include": [
-    "../../apps/TaskTimer/.next/types/**/*.ts",
-    "../../dist/apps/TaskTimer/.next/types/**/*.ts",
+    "../../apps/Ippo/.next/types/**/*.ts",
+    "../../dist/apps/Ippo/.next/types/**/*.ts",
     "next-env.d.ts",
     "src/**/*.js",
     "src/**/*.jsx",
