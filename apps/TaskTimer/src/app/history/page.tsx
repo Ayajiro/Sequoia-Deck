@@ -1,5 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import '../i18n';
 
 function formatTime(sec: number) {
   const h = String(Math.floor(sec / 3600)).padStart(2, '0');
@@ -16,6 +18,8 @@ interface RecordItem {
 
 export default function HistoryPage() {
   const [records, setRecords] = useState<RecordItem[]>([]);
+  const { t, i18n } = useTranslation();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const data = localStorage.getItem('tasktimer-records');
@@ -23,18 +27,37 @@ export default function HistoryPage() {
       const arr = JSON.parse(data) as RecordItem[];
       setRecords(arr.reverse());
     }
+    setMounted(true);
   }, []);
+
+  if (!mounted) return null;
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white text-black">
       <div className="flex flex-col items-center w-full max-w-3xl relative">
+        <div className="absolute top-0 right-0 flex gap-2">
+          <button
+            onClick={() => i18n.changeLanguage('zh-TW')}
+            className={`px-4 py-2 rounded-full border transition-colors duration-150 font-semibold text-sm
+              ${i18n.language === 'zh-TW' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
+          >
+            繁體中文
+          </button>
+          <button
+            onClick={() => i18n.changeLanguage('en')}
+            className={`px-4 py-2 rounded-full border transition-colors duration-150 font-semibold text-sm
+              ${i18n.language === 'en' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
+          >
+            English
+          </button>
+        </div>
         <button
           className="absolute top-0 left-0 px-6 py-2 bg-gray-200 text-black rounded-md font-semibold text-base hover:bg-gray-300 transition-colors duration-150"
           onClick={() => window.location.href = '/'}
         >
-          回首頁
+          {t('backHome')}
         </button>
-        <h1 className="text-4xl font-bold mb-10 text-center">歷史記錄</h1>
+        <h1 className="text-4xl font-bold mb-10 text-center">{t('historyTitle')}</h1>
         <div className="w-full flex justify-center">
           <div
             className="w-full max-w-3xl h-[480px] overflow-y-auto rounded-lg border border-gray-300 bg-white shadow flex justify-center custom-scrollbar"

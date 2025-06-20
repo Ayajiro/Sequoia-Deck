@@ -1,10 +1,17 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import './i18n';
 
 export default function Index() {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
+  const { t, i18n } = useTranslation();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
+  if (!mounted) return null;
 
   const handleGo = () => {
     const value = inputRef.current?.value.trim() || '';
@@ -19,18 +26,34 @@ export default function Index() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white text-black relative">
+      <div className="absolute top-8 right-8 flex gap-2">
+        <button
+          onClick={() => i18n.changeLanguage('zh-TW')}
+          className={`px-4 py-2 rounded-full border transition-colors duration-150 font-semibold text-sm
+            ${i18n.language === 'zh-TW' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
+        >
+          繁體中文
+        </button>
+        <button
+          onClick={() => i18n.changeLanguage('en')}
+          className={`px-4 py-2 rounded-full border transition-colors duration-150 font-semibold text-sm
+            ${i18n.language === 'en' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
+        >
+          English
+        </button>
+      </div>
       <button
         className="absolute top-8 left-8 px-6 py-2 bg-gray-200 text-black rounded-md font-semibold text-base hover:bg-gray-300 transition-colors duration-150"
         onClick={handleHistory}
       >
-        記錄
+        {t('history')}
       </button>
       <h1 className="text-[100px] font-bold text-center select-none">TaskTimer</h1>
       <div className="flex mt-12 w-full max-w-md">
         <input
           ref={inputRef}
           type="text"
-          placeholder="Do Something..."
+          placeholder={t('placeholder')}
           className="flex-1 px-6 py-4 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-black text-lg bg-white placeholder-gray-400"
           onKeyDown={e => { if (e.key === 'Enter') handleGo(); }}
         />
@@ -38,7 +61,7 @@ export default function Index() {
           className="px-8 py-4 bg-black text-white rounded-r-md font-semibold text-lg hover:bg-gray-800 transition-colors duration-150"
           onClick={handleGo}
         >
-          Go
+          {t('go')}
         </button>
       </div>
       <a
