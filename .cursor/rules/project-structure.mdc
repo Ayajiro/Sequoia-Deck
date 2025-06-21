@@ -1,0 +1,23 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+<!-- 以下是本專案的資訊，請你參考後給出適當的建議
+
+1. 專案架構：
+這是一個使用 Nx 的 monorepo 專案
+主要是 Playwright E2E 相關的測試
+
+2. 測試配置：
+使用 Playwright 進行 E2E 測試
+測試配置良好，包含了：
+多瀏覽器支持（Chrome、Firefox、Safari）
+環境變量管理（開發、beta、生產環境）
+合理的超時設置（120秒全局超時，5秒斷言超時）
+CI/CD 相關配置（重試機制、並行執行控制）
+
+3. 測試組織：
+測試按環境分類（common、beta、production、records）
+使用 grep 過濾器來控制測試執行範圍
+有全局設置文件（global-setup） -->

@@ -1,10 +1,13 @@
 ---
-description:
-globs:
-alwaysApply: false
+description: 
+globs: 
+alwaysApply: true
 ---
 // Project-specific Cursor Rules for Sequoia-Deck
 // 本檔案針對本專案的實際開發流程與結構，提供 Cursor 操作指引
+
+# 開發環境
+- 開發環境爲 windows 11，執行 terminal 操作時應使用 cmd 相關指令
 
 # Monorepo 結構
 - 本專案採用 Nx 管理 monorepo，所有應用程式與測試專案皆位於 apps/ 目錄下。
