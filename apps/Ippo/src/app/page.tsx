@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import './i18n';
+import '@i18n/i18n';
 
 export default function Index() {
   const router = useRouter();

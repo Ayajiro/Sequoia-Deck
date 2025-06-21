@@ -1,0 +1,21 @@
+{
+  "translation": {
+    "appTitle": "Ippo",
+    "backHome": "Back Home",
+    "clearHistory": "Clear History",
+    "go": "Go",
+    "greeting1": "What do you want to accomplish today?",
+    "greeting2": "You can do it!",
+    "greeting3": "Start with a small goal!",
+    "history": "History",
+    "historyTitle": "History",
+    "noRecords": "No records found",
+    "pause": "Pause",
+    "placeholder": "Do Something...",
+    "resume": "Resume",
+    "stop": "Stop",
+    "tableDuration": "Duration",
+    "tableTask": "Task",
+    "tableTime": "Time"
+  }
+}

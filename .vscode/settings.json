@@ -1,3 +1,19 @@
 {
-    "nxConsole.generateAiAgentRules": true
+    "npm.packageManager": "pnpm",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "nxConsole.generateAiAgentRules": true,
+    "eslint.execArgv": ["--max_old_space_size=4096"],
+    "eslint.useFlatConfig": true,
+    "i18n-ally.localesPaths": ["libs/shared/i18n/locales"],
+    "i18n-ally.keystyle": "nested",
+    "i18n-ally.sourceLanguage": "en",
+    "i18n-ally.displayLanguage": "zh-TW",
+    "i18n-ally.sortKeys": true,
+    "i18n-ally.namespace": true,
+    "i18n-ally.defaultNamespace": "translation",
+    "i18n-ally.enabledFrameworks": ["i18next"],
+    "i18n-ally.enabledParsers": ["json"],
+    "i18n-ally.extract.autoDetect": true
 }

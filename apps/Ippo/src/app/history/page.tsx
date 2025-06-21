@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import '../i18n';
+import '@i18n/i18n';
 
 function formatTime(sec: number) {
   const h = String(Math.floor(sec / 3600)).padStart(2, '0');

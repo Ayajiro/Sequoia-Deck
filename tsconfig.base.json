@@ -16,6 +16,11 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["development"]
+    "customConditions": ["development"],
+    "paths": {
+      "@i18n/*": ["libs/shared/i18n/*"],
+      "@Ippo/*": ["apps/Ippo/*"],
+      "@Ippo-e2e/*": ["apps/Ippo-e2e/*"],
+    }
   }
 }

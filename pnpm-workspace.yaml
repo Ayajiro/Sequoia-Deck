@@ -2,3 +2,4 @@ packages:
   - 'Ippo'
   - 'TomatoToDo'
   - 'packages/*'
+  - 'shared'

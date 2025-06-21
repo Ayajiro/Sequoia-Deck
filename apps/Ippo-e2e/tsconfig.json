@@ -6,12 +6,20 @@
     "sourceMap": true,
     "strict": true,
     "paths": {
+      "@i18n/*": ["../../libs/shared/i18n/locales/*"],
       "@sequoia-deck/Ippo/*": ["../Ippo/src/*"]
     },
+    "baseUrl": "./",
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   },
+  "references": [
+    {
+      "path": "../../libs/shared"
+    }
+  ],
   "include": [
     "**/*.ts",
     "**/*.js",

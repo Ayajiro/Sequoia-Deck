@@ -3,17 +3,5 @@
   "compileOnSave": false,
   "files": [],
   "references": [
-    {
-      "path": "./apps/Ippo-e2e"
-    },
-    {
-      "path": "./apps/Ippo"
-    },
-    {
-      "path": "./apps/TomatoToDo-e2e"
-    },
-    {
-      "path": "./apps/TomatoToDo"
-    }
   ]
 }

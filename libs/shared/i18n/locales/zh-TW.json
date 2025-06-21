@@ -1,0 +1,25 @@
+{
+   "translation": {
+    
+     "appTitle": "一步",
+     "backHome": "回到首頁",
+     "clearHistory": "清除紀錄",
+     "confirmClearHistory": "確定要清除所有紀錄嗎？",
+     "go": "開始",
+     "greeting1": "你好，要做什麼？",
+     "greeting2": "今天的任務是？",
+     "greeting3": "一步一腳印",
+     "history": "記錄",
+     "historyTitle": "歷史紀錄",
+     "noRecords": "沒有紀錄",
+     "pause": "暫停",
+     "placeholder": "請輸入任務名稱...",
+     "resume": "繼續",
+     "stop": "停止",
+     "tableDuration": "持續時間",
+     "tableTask": "任務",
+     "tableTime": "時間",
+     "taskLabel": "任務",
+     "timerTitle": "正在專注於"
+  }
+}
