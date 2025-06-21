@@ -104,7 +104,7 @@ export default function TimerPage() {
             <h2 className="text-3xl font-semibold text-center break-all max-w-2xl">{task}</h2>
           </div>
           <div className="flex-1 flex flex-col justify-center items-center w-full">
-            <span className="text-[120px] font-bold select-none tracking-widest">{formatTime(seconds)}</span>
+            <span className="text-[120px] font-bold select-none tracking-widest" data-testid="timer-display">{formatTime(seconds)}</span>
           </div>
           <div className="flex gap-8 mb-16">
             {running ? (

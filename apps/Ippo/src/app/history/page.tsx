@@ -27,47 +27,49 @@ export default function HistoryPage() {
       if (data) {
         setRecords(JSON.parse(data));
       }
+    } else {
+      setMounted(true);
     }
-    setMounted(true);
-  }, []);
+  }, [mounted]);
 
   if (!mounted) return null;
 
+  const handleClearHistory = () => {
+    if (window.confirm(t('confirmClearHistory'))) {
+      localStorage.removeItem('ippo-records');
+      setRecords([]);
+    }
+  };
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-white text-black">
+    <div className="min-h-screen flex flex-col items-center bg-white text-black relative">
       <div className="absolute top-6 left-8 z-10 flex items-center gap-2">
         <span className="text-2xl font-bold tracking-wide select-none">{t('appTitle')}</span>
       </div>
-      <div className="flex flex-col items-center w-full max-w-3xl relative">
-        <div className="absolute top-0 right-0 flex gap-2">
-          <button
-            onClick={() => i18n.changeLanguage('zh-TW')}
-            className={`px-4 py-2 rounded-full border transition-colors duration-150 font-semibold text-sm
-              ${i18n.language === 'zh-TW' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
-          >
-            繁體中文
-          </button>
-          <button
-            onClick={() => i18n.changeLanguage('en')}
-            className={`px-4 py-2 rounded-full border transition-colors duration-150 font-semibold text-sm
-              ${i18n.language === 'en' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
-          >
-            English
-          </button>
-          <button
-            onClick={() => i18n.changeLanguage('ja')}
-            className={`px-4 py-2 rounded-full border transition-colors duration-150 font-semibold text-sm
-              ${i18n.language === 'ja' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
-          >
-            日本語
-          </button>
-        </div>
+      <div className="absolute top-8 right-8 flex gap-2">
         <button
-          className="absolute top-0 left-0 px-6 py-2 bg-gray-200 text-black rounded-md font-semibold text-base hover:bg-gray-300 transition-colors duration-150"
-          onClick={() => window.location.href = '/'}
+          onClick={() => i18n.changeLanguage('zh-TW')}
+          className={`px-4 py-2 rounded-full border transition-colors duration-150 font-semibold text-sm
+            ${i18n.language === 'zh-TW' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
         >
-          {t('backHome')}
+          繁體中文
         </button>
+        <button
+          onClick={() => i18n.changeLanguage('en')}
+          className={`px-4 py-2 rounded-full border transition-colors duration-150 font-semibold text-sm
+            ${i18n.language === 'en' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
+        >
+          English
+        </button>
+        <button
+          onClick={() => i18n.changeLanguage('ja')}
+          className={`px-4 py-2 rounded-full border transition-colors duration-150 font-semibold text-sm
+            ${i18n.language === 'ja' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
+        >
+          日本語
+        </button>
+      </div>
+      <div className="flex flex-col items-center w-full max-w-3xl pt-24 pb-24 px-4">
         <h1 className="text-4xl font-bold mb-10 text-center">{t('historyTitle')}</h1>
         <div className="w-full flex justify-center">
           <div
@@ -85,7 +87,7 @@ export default function HistoryPage() {
               <tbody>
                 {records.length === 0 ? (
                   <tr>
-                    <td colSpan={3} className="text-center py-8 text-gray-400">無資料</td>
+                    <td colSpan={3} className="text-center py-8 text-gray-400">{t('noRecords')}</td>
                   </tr>
                 ) : (
                   records.map((rec, idx) => (
@@ -101,6 +103,23 @@ export default function HistoryPage() {
           </div>
         </div>
       </div>
+
+      {/* 左下角返回按鈕 */}
+      <button
+        className="fixed bottom-8 left-8 px-6 py-2 bg-gray-200 text-black rounded-md font-semibold text-base hover:bg-gray-300 transition-colors duration-150 z-20"
+        onClick={() => window.location.href = '/'}
+      >
+        {t('backHome')}
+      </button>
+
+      {/* 右下角清除記錄按鈕 */}
+      <button
+        className="fixed bottom-8 right-8 px-6 py-2 bg-red-500 text-white rounded-md font-semibold text-base hover:bg-red-600 transition-colors duration-150 z-20"
+        onClick={handleClearHistory}
+      >
+        {t('clearHistory')}
+      </button>
+
       <style jsx global>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 10px;

@@ -3,7 +3,14 @@
   "compilerOptions": {
     "allowJs": true,
     "outDir": "out-tsc/playwright",
-    "sourceMap": false
+    "sourceMap": true,
+    "strict": true,
+    "paths": {
+      "@sequoia-deck/Ippo/*": ["../Ippo/src/*"]
+    },
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "include": [
     "**/*.ts",

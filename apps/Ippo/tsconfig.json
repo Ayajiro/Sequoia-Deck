@@ -29,7 +29,8 @@
     },
     "outDir": "dist",
     "rootDir": "src",
-    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo"
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
   "include": [
     "../../apps/Ippo/.next/types/**/*.ts",
@@ -39,7 +40,12 @@
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "vitest.config.ts"
   ],
   "exclude": [
     "out-tsc",

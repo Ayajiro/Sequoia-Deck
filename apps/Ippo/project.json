@@ -1,0 +1,56 @@
+{
+  "name": "Ippo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/Ippo",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/Ippo"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/Ippo"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "Ippo:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "Ippo:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "Ippo:build:production",
+          "dev": false
+        }
+      }
+    },
+    "start": {
+      "executor": "@nx/next:server",
+      "options": {
+        "buildTarget": "Ippo:build:development",
+        "dev": true
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passThroughArgs": true,
+        "reportsDirectory": "../../dist/apps/Ippo/test-results"
+      }
+    }
+  },
+  "tags": []
+} 

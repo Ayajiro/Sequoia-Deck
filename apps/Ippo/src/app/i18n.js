@@ -1,24 +1,29 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-const resources = {
+export const resources = {
   'zh-TW': {
     translation: {
       history: '記錄',
-      placeholder: '請輸入任務...',
+      placeholder: '請輸入任務名稱...',
       go: '開始',
       pause: '暫停',
       resume: '繼續',
       stop: '停止',
-      backHome: '回首頁',
-      historyTitle: '歷史記錄',
-      appTitle: 'Ippo',
-      greeting1: '今天想完成什麼？',
-      greeting2: '加油！你可以的！',
-      greeting3: '從一個小目標開始吧！',
+      backHome: '回到首頁',
+      historyTitle: '歷史紀錄',
+      appTitle: '一步',
+      greeting1: '你好，要做什麼？',
+      greeting2: '今天的任務是？',
+      greeting3: '一步一腳印',
+      timerTitle: '正在專注於',
+      taskLabel: '任務',
       tableTime: '時間',
       tableTask: '任務',
-      tableDuration: '花費時間',
+      tableDuration: '持續時間',
+      noRecords: '沒有紀錄',
+      clearHistory: '清除紀錄',
+      confirmClearHistory: '確定要清除所有紀錄嗎？'
     },
   },
   en: {
@@ -38,25 +43,32 @@ const resources = {
       tableTime: 'Time',
       tableTask: 'Task',
       tableDuration: 'Duration',
+      noRecords: 'No records found',
+      clearHistory: 'Clear History'
     },
   },
   ja: {
     translation: {
       history: '履歴',
-      placeholder: 'タスクを入力してください...',
-      go: '開始',
+      placeholder: 'タスク名を入力してください...',
+      go: '進む',
       pause: '一時停止',
       resume: '再開',
       stop: '停止',
-      backHome: 'ホームに戻る',
-      historyTitle: '履歴',
-      appTitle: 'イッポ',
-      greeting1: '今日は何を達成したいですか？',
-      greeting2: '頑張って！あなたならできる！',
-      greeting3: '小さな目標から始めましょう！',
+      backHome: 'ホームページに戻る',
+      historyTitle: '歴史記録',
+      appTitle: '一歩',
+      greeting1: 'こんにちは、何を始めますか？',
+      greeting2: '今日のタスクは何ですか？',
+      greeting3: '一歩ずつ、始めましょう',
+      timerTitle: '現在、集中しています',
+      taskLabel: 'タスク',
       tableTime: '時間',
       tableTask: 'タスク',
-      tableDuration: '所要時間',
+      tableDuration: '期間',
+      noRecords: '記録はありません',
+      clearHistory: '記録を消去',
+      confirmClearHistory: '本当にすべての記録を消去しますか？'
     },
   },
 };
