@@ -1,3 +1,4 @@
 packages:
-  - 'TaskTimer'
-  - 'apps/*'
+  - 'Ippo'
+  - 'TomatoToDo'
+  - 'packages/*'

@@ -44,14 +44,23 @@ export default function TimerPage() {
     };
   }, [running]);
 
+  useEffect(() => {
+    if (mounted && seconds > 0 && seconds % 5 === 0) {
+      const prev = JSON.parse(localStorage.getItem('ippo-records') || '[]');
+      const now = new Date();
+      prev.unshift({ task: task, time: 5, date: now.toISOString() });
+      localStorage.setItem('ippo-records', JSON.stringify(prev));
+    }
+  }, [seconds, mounted, task]);
+
   const handlePause = () => setRunning(false);
   const handleResume = () => setRunning(true);
   const handleStop = () => {
     if (task) {
       const record = { task, seconds, time: new Date().toISOString() };
-      const prev = JSON.parse(localStorage.getItem('tasktimer-records') || '[]');
+      const prev = JSON.parse(localStorage.getItem('ippo-records') || '[]');
       prev.push(record);
-      localStorage.setItem('tasktimer-records', JSON.stringify(prev));
+      localStorage.setItem('ippo-records', JSON.stringify(prev));
     }
     router.push('/');
   };

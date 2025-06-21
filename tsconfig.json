@@ -4,10 +4,10 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/TaskTimer-e2e"
+      "path": "./apps/Ippo-e2e"
     },
     {
-      "path": "./apps/TaskTimer"
+      "path": "./apps/Ippo"
     },
     {
       "path": "./apps/TomatoToDo-e2e"

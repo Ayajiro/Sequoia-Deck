@@ -24,9 +24,9 @@ export default defineConfig({
   },
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'pnpm exec nx run @sequoia-deck/TaskTimer:start',
-    url: 'http://localhost:3000',
-    reuseExistingServer: true,
+    command: 'pnpm exec nx run @sequoia-deck/Ippo:start',
+    url: 'http://127.0.0.1:3000',
+    reuseExistingServer: !process.env.CI,
     cwd: workspaceRoot,
   },
   projects: [

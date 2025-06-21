@@ -22,10 +22,11 @@ export default function HistoryPage() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const data = localStorage.getItem('tasktimer-records');
-    if (data) {
-      const arr = JSON.parse(data) as RecordItem[];
-      setRecords(arr.reverse());
+    if (mounted) {
+      const data = localStorage.getItem('ippo-records');
+      if (data) {
+        setRecords(JSON.parse(data));
+      }
     }
     setMounted(true);
   }, []);

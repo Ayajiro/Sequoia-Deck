@@ -86,7 +86,6 @@ export default function Index() {
           type="text"
           placeholder={t('placeholder')}
           className="flex-1 px-6 py-4 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-black text-lg bg-white placeholder-gray-400"
-          onKeyDown={e => { if (e.key === 'Enter') handleGo(); }}
         />
         <button
           className="px-8 py-4 bg-black text-white rounded-r-md font-semibold text-lg hover:bg-gray-800 transition-colors duration-150"
