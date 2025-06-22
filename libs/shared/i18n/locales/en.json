@@ -3,6 +3,7 @@
     "appTitle": "Ippo",
     "backHome": "Back Home",
     "clearHistory": "Clear History",
+    "confirmClearHistory": "Are you sure you want to clear all records?",
     "go": "Go",
     "greeting1": "What do you want to accomplish today?",
     "greeting2": "You can do it!",
@@ -16,6 +17,8 @@
     "stop": "Stop",
     "tableDuration": "Duration",
     "tableTask": "Task",
-    "tableTime": "Time"
+    "tableTime": "Time",
+    "taskLabel": "Task",
+    "timerTitle": "Currently Focusing On"
   }
 }

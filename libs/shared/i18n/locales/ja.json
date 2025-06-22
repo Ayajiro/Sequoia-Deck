@@ -1,25 +1,24 @@
 {
    "translation": {
-    
-     "history": "履歴",
-     "placeholder": "タスク名を入力してください...",
-     "go": "進む",
-     "pause": "一時停止",
-     "resume": "再開",
-     "stop": "停止",
-     "backHome": "ホームページに戻る",
-     "historyTitle": "歴史記録",
      "appTitle": "一歩",
+     "backHome": "ホームページに戻る",
+     "clearHistory": "記録を消去",
+     "confirmClearHistory": "本当にすべての記録を消去しますか？",
+     "go": "進む",
      "greeting1": "こんにちは、何を始めますか？",
      "greeting2": "今日のタスクは何ですか？",
      "greeting3": "一歩ずつ、始めましょう",
-     "timerTitle": "現在、集中しています",
-     "taskLabel": "タスク",
+     "history": "履歴",
+     "historyTitle": "歴史記録",
+     "noRecords": "記録はありません",
+     "pause": "一時停止",
+     "placeholder": "タスク名を入力してください...",
+     "resume": "再開",
+     "stop": "停止",
+     "tableDuration": "期間",
      "tableTime": "時間",
      "tableTask": "タスク",
-     "tableDuration": "期間",
-     "noRecords": "記録はありません",
-     "clearHistory": "記録を消去",
-     "confirmClearHistory": "本当にすべての記録を消去しますか？"
+     "taskLabel": "タスク",
+     "timerTitle": "現在、集中しています"
   }
 } 
