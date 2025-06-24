@@ -37,8 +37,6 @@
     }
   ],
   "include": [
-    "../../apps/Ippo/.next/types/**/*.ts",
-    "../../dist/apps/Ippo/.next/types/**/*.ts",
     "next-env.d.ts",
     "src/**/*.js",
     "src/**/*.jsx",
