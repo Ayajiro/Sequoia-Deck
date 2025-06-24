@@ -7,7 +7,7 @@ import '@i18n/i18n';
 export default function Index() {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('translation');
   const [mounted, setMounted] = useState(false);
   const [greeting, setGreeting] = useState('');
 
@@ -24,7 +24,7 @@ export default function Index() {
       ];
       setGreeting(greetings[Math.floor(Math.random() * greetings.length)]);
     }
-  }, [i18n.language, mounted]);
+  }, [i18n,i18n.language, mounted]);
 
   if (!mounted) return null;
 
