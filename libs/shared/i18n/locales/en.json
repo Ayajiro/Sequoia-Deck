@@ -1,5 +1,4 @@
 {
-  "translation": {
     "appTitle": "Ippo",
     "backHome": "Back Home",
     "clearHistory": "Clear History",
@@ -20,5 +19,4 @@
     "tableTime": "Time",
     "taskLabel": "Task",
     "timerTitle": "Currently Focusing On"
-  }
 }
