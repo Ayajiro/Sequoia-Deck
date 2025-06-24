@@ -1,0 +1,26 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "out-tsc/playwright",
+    "sourceMap": true,
+    "strict": true,
+    "paths": {
+      "@i18n/*": ["../../libs/shared/i18n/locales/*"],
+      "@sequoia-deck/Kinomi/*": ["../Kinomi/src/*"]
+    },
+    "baseUrl": "./"
+  },
+  "references": [
+    { "path": "../../../libs/shared" }
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.spec.ts",
+    "src/**/*.spec.js",
+    "src/**/*.test.ts",
+    "src/**/*.test.js",
+    "src/**/*.d.ts",
+    "playwright.config.ts"
+  ]
+}

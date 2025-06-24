@@ -1,0 +1,56 @@
+{
+  "name": "Kinomi",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/Kinomi",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/Kinomi"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/Kinomi"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "Kinomi:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "Kinomi:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "Kinomi:build:production",
+          "dev": false
+        }
+      }
+    },
+    "start": {
+      "executor": "@nx/next:server",
+      "options": {
+        "buildTarget": "Kinomi:build:development",
+        "dev": true
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passThroughArgs": true,
+        "reportsDirectory": "../../dist/apps/Kinomi/test-results"
+      }
+    }
+  },
+  "tags": []
+} 
